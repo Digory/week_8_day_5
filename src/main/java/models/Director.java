@@ -1,16 +1,35 @@
 package models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "directors")
 public class Director {
 
+    private int id;
     private String name;
     private Studio studio;
     private Film film;
+
+    public Director(){}
 
     public Director(String name, Studio studio) {
         this.name = name;
         this.studio = studio;
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -19,6 +38,8 @@ public class Director {
         this.name = name;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "studio_id", nullable = false)
     public Studio getStudio() {
         return studio;
     }

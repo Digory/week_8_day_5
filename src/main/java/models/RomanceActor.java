@@ -2,6 +2,8 @@ package models;
 
 public class RomanceActor extends Actor{
 
+    public RomanceActor(){}
+
     public RomanceActor(String name) {
         super(name, FilmGenreType.ROMANCE);
     }

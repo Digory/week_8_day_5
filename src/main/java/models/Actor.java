@@ -9,6 +9,8 @@ public abstract class Actor {
     protected FilmGenreType genreOfSpeciality;
     protected List<Film> filmsStarredIn;
 
+    public Actor(){}
+
     public Actor(String name, FilmGenreType genreOfSpeciality){
         this.name = name;
         this.genreOfSpeciality = genreOfSpeciality;

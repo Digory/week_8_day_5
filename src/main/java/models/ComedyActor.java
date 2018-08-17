@@ -3,6 +3,8 @@ package models;
 public class ComedyActor extends Actor{
 
 
+    public ComedyActor(){}
+
     public ComedyActor(String name) {
         super(name, FilmGenreType.COMEDY);
     }

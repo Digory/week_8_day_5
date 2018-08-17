@@ -11,6 +11,8 @@ public class Film {
     private Director director;
     private List<Actor> actors;
 
+    public Film(){}
+
     public Film(String title, FilmGenreType genre, Studio studio, Director director) {
         this.title = title;
         this.genre = genre;
