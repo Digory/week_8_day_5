@@ -83,5 +83,9 @@ public abstract class Actor {
         this.filmsStarredIn = filmsStarredIn;
     }
 
+    public void addToFilmsStarredIn(Film film){
+        filmsStarredIn.add(film);
+    }
+
     public abstract String audition();
 }

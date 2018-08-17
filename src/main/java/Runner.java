@@ -1,3 +1,4 @@
+import db.DBActor;
 import db.DBHelper;
 import models.*;
 
@@ -25,8 +26,12 @@ public class Runner {
         DramaActor seriousMike = new DramaActor("Mike the Spike");
         DBHelper.save(seriousMike);
 
-        filmRabbits.addActor(comedyJane);
-        filmRabbits.addActor(seriousMike);
-        DBHelper.update(filmRabbits);
+        DBActor.addActorToFilm(comedyJane, filmRabbits);
+        DBActor.addActorToFilm(seriousMike, filmRabbits);
+
+//        ASK ABOUT THIS ON MONDAY - You get duplicates in the join table if you add a film to the actor's list of films,
+//        and add the actor to the film's list of actors, and update. Is it okay to only add one to the other and
+//        update, even though that would mean differences between the information in the Java world, and the database?
+
     }
 }
