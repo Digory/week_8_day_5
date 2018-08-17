@@ -36,6 +36,7 @@ public class Film {
         this.id = id;
     }
 
+    @Column(name = "title")
     public String getTitle() {
         return title;
     }
@@ -44,6 +45,7 @@ public class Film {
         this.title = title;
     }
 
+    @Enumerated(value = EnumType.STRING)
     public FilmGenreType getGenre() {
         return genre;
     }
@@ -62,13 +64,15 @@ public class Film {
         this.studio = studio;
     }
 
-//    public Director getDirector() {
-//        return director;
-//    }
-//
-//    public void setDirector(Director director) {
-//        this.director = director;
-//    }
+    @OneToOne
+    @JoinColumn(name = "director_id", nullable = false)
+    public Director getDirector() {
+        return director;
+    }
+
+    public void setDirector(Director director) {
+        this.director = director;
+    }
 
 //    public List<Actor> getActors() {
 //        return actors;

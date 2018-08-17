@@ -48,11 +48,12 @@ public class Director {
         this.studio = studio;
     }
 
-//    public Film getFilm() {
-//        return film;
-//    }
-//
-//    public void setFilm(Film film) {
-//        this.film = film;
-//    }
+    @OneToOne(mappedBy = "director")
+    public Film getFilm() {
+        return film;
+    }
+
+    public void setFilm(Film film) {
+        this.film = film;
+    }
 }
