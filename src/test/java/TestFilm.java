@@ -27,24 +27,24 @@ public class TestFilm {
         assertEquals(studio, film.getStudio());
     }
 
-    @Test
-    public void hasDirector(){
-        assertEquals(director, film.getDirector());
-    }
+//    @Test
+//    public void hasDirector(){
+//        assertEquals(director, film.getDirector());
+//    }
 
     @Test
     public void hasGenre(){
         assertEquals(FilmGenreType.JUST_WEIRD, film.getGenre());
     }
 
-    @Test
-    public void actorListEmptyOnInitialisation(){
-        assertEquals(0, film.getActors().size());
-    }
-
-    @Test
-    public void canAddToActorList(){
-        film.addActor(new DramaActor("Jane"));
-        assertEquals(1, film.getActors().size());
-    }
+//    @Test
+//    public void actorListEmptyOnInitialisation(){
+//        assertEquals(0, film.getActors().size());
+//    }
+//
+//    @Test
+//    public void canAddToActorList(){
+//        film.addActor(new DramaActor("Jane"));
+//        assertEquals(1, film.getActors().size());
+//    }
 }

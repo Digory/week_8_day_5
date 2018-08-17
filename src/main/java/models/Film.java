@@ -1,10 +1,14 @@
 package models;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "films")
 public class Film {
 
+    private int id;
     private String title;
     private FilmGenreType genre;
     private Studio studio;
@@ -19,6 +23,17 @@ public class Film {
         this.studio = studio;
         this.director = director;
         actors = new ArrayList<Actor>();
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -37,6 +52,8 @@ public class Film {
         this.genre = genre;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "studio_id", nullable = false)
     public Studio getStudio() {
         return studio;
     }
@@ -45,23 +62,23 @@ public class Film {
         this.studio = studio;
     }
 
-    public Director getDirector() {
-        return director;
-    }
+//    public Director getDirector() {
+//        return director;
+//    }
+//
+//    public void setDirector(Director director) {
+//        this.director = director;
+//    }
 
-    public void setDirector(Director director) {
-        this.director = director;
-    }
-
-    public List<Actor> getActors() {
-        return actors;
-    }
-
-    public void setActors(List<Actor> actors) {
-        this.actors = actors;
-    }
-
-    public void addActor(Actor actor){
-        actors.add(actor);
-    }
+//    public List<Actor> getActors() {
+//        return actors;
+//    }
+//
+//    public void setActors(List<Actor> actors) {
+//        this.actors = actors;
+//    }
+//
+//    public void addActor(Actor actor){
+//        actors.add(actor);
+//    }
 }

@@ -54,6 +54,7 @@ public class Studio {
         directors.add(director);
     }
 
+    @OneToMany(mappedBy = "studio")
     public List<Film> getFilms() {
         return films;
     }

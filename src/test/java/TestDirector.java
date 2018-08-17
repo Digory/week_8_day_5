@@ -28,9 +28,9 @@ public class TestDirector {
         assertEquals(studio, director.getStudio());
     }
 
-    @Test
-    public void canSetFilm(){
-        director.setFilm(film);
-        assertEquals(film, director.getFilm());
-    }
+//    @Test
+//    public void canSetFilm(){
+//        director.setFilm(film);
+//        assertEquals(film, director.getFilm());
+//    }
 }
