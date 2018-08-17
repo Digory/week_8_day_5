@@ -2,7 +2,7 @@ package models;
 
 public class DramaActor extends Actor{
 
-    public DramaActor(String name, int wallet) {
+    public DramaActor(String name) {
         super(name, FilmGenreType.DRAMA);
     }
 
