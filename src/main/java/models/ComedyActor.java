@@ -1,7 +1,11 @@
 package models;
 
-public class ComedyActor extends Actor{
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "comedy_actors")
+public class ComedyActor extends Actor{
 
     public ComedyActor(){}
 

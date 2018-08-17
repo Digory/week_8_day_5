@@ -1,8 +1,5 @@
 import db.DBHelper;
-import models.Director;
-import models.Film;
-import models.FilmGenreType;
-import models.Studio;
+import models.*;
 
 public class Runner {
     public static void main(String[] args) {
@@ -21,5 +18,15 @@ public class Runner {
 
         Film filmRabbitsTwo = new Film("Mark's Marvellous Rabbits 2", FilmGenreType.HORROR, studio, directorNeil);
         DBHelper.save(filmRabbitsTwo);
+
+        ComedyActor comedyJane = new ComedyActor("Jane");
+        DBHelper.save(comedyJane);
+
+        DramaActor seriousMike = new DramaActor("Mike the Spike");
+        DBHelper.save(seriousMike);
+
+        filmRabbits.addActor(comedyJane);
+        filmRabbits.addActor(seriousMike);
+        DBHelper.update(filmRabbits);
     }
 }
