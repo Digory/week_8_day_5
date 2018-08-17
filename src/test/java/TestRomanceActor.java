@@ -40,4 +40,9 @@ public class TestRomanceActor {
     public void hasRomanceSpecificAudition(){
         assertEquals(" --just stands there with rose in mouth, winking-- ", romanticMike.audition());
     }
+
+    @Test
+    public void hasEmptyListOfFilmsOnInitialization(){
+        assertEquals(0, romanticMike.getFilmsStarredIn().size());
+    }
 }

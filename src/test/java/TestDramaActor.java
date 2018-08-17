@@ -40,4 +40,9 @@ public class TestDramaActor {
     public void hasDramaSpecificAudition(){
         assertEquals("I am a really serious actor guys.", seriousMike.audition());
     }
+
+    @Test
+    public void hasEmptyListOfFilmsOnInitialization(){
+        assertEquals(0, seriousMike.getFilmsStarredIn().size());
+    }
 }

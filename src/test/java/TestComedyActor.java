@@ -42,4 +42,9 @@ public class TestComedyActor {
                 "WWWWOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO. The other one says, Frank, you're drunk.",
                 funnyMike.audition());
     }
+
+    @Test
+    public void hasEmptyListOfFilmsOnInitialization(){
+        assertEquals(0, funnyMike.getFilmsStarredIn().size());
+    }
 }
