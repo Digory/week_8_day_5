@@ -6,7 +6,7 @@ import java.util.List;
 public class Runner {
     public static void main(String[] args) {
 
-        Studio studio = new Studio("Nice Films");
+        Studio studio = new Studio("Nice Films", 1000000);
         DBHelper.save(studio);
 
         Director directorNelly = new Director("Nelly", studio);

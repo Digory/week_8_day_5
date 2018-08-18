@@ -14,7 +14,7 @@ public class TestDirector {
 
     @Before
     public void before(){
-        studio = new Studio("Nice films");
+        studio = new Studio("Nice films", 1000000);
         director = new Director("Digory", studio);
     }
 
@@ -28,9 +28,9 @@ public class TestDirector {
         assertEquals(studio, director.getStudio());
     }
 
-//    @Test
-//    public void canSetFilm(){
-//        director.setFilm(film);
-//        assertEquals(film, director.getFilm());
-//    }
+    @Test
+    public void canSetFilm(){
+        director.setFilm(film);
+        assertEquals(film, director.getFilm());
+    }
 }

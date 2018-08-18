@@ -12,11 +12,13 @@ public class Studio {
     private String name;
     private List<Director> directors;
     private List<Film> films;
+    private int budget;
 
     public Studio(){}
 
-    public Studio(String name) {
+    public Studio(String name, int budget) {
         this.name = name;
+        this.budget = budget;
         directors = new ArrayList<Director>();
         films = new ArrayList<Film>();
     }
@@ -39,6 +41,15 @@ public class Studio {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Column(name = "budget")
+    public int getBudget() {
+        return budget;
+    }
+
+    public void setBudget(int budget) {
+        this.budget = budget;
     }
 
     @OneToMany(mappedBy = "studio")

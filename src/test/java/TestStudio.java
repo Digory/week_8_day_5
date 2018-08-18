@@ -13,7 +13,7 @@ public class TestStudio {
 
     @Before
     public void before(){
-        studio = new Studio("Nice Films");
+        studio = new Studio("Nice Films", 1000000);
         director = new Director("Digory", studio);
         film = new Film("Mark's marvellous rabbits", FilmGenreType.JUST_WEIRD, studio, director);
     }
@@ -21,6 +21,11 @@ public class TestStudio {
     @Test
     public void hasName(){
         assertEquals("Nice Films", studio.getName());
+    }
+
+    @Test
+    public void hasBudget(){
+        assertEquals(1000000, studio.getBudget());
     }
 
     @Test
