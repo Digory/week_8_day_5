@@ -77,4 +77,8 @@ public class Studio {
     public void addFilm(Film film){
         films.add(film);
     }
+
+    public void payActor(Actor actor, int amount){
+        actor.addToWallet(amount);
+    }
 }

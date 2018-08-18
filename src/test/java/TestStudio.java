@@ -9,6 +9,7 @@ public class TestStudio {
     private Studio studio;
     private Director director;
     private Film film;
+    private RomanceActor actor;
 
 
     @Before
@@ -16,6 +17,7 @@ public class TestStudio {
         studio = new Studio("Nice Films", 1000000);
         director = new Director("Digory", studio);
         film = new Film("Mark's marvellous rabbits", FilmGenreType.JUST_WEIRD, studio, director);
+        actor = new RomanceActor("Hugh Grant");
     }
 
     @Test
@@ -48,6 +50,12 @@ public class TestStudio {
     public void canAddFilm(){
         studio.addFilm(film);
         assertEquals(1, studio.getFilms().size());
+    }
+
+    @Test
+    public void canPayActor(){
+        studio.payActor(actor, 5000);
+        assertEquals(5000, actor.getWallet());
     }
 
 }
