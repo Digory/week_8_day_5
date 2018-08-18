@@ -1,6 +1,7 @@
-import db.DBActor;
-import db.DBHelper;
+import db.*;
 import models.*;
+
+import java.util.List;
 
 public class Runner {
     public static void main(String[] args) {
@@ -28,10 +29,20 @@ public class Runner {
 
         DBActor.addActorToFilm(comedyJane, filmRabbits);
         DBActor.addActorToFilm(seriousMike, filmRabbits);
+        DBActor.addActorToFilm(comedyJane, filmRabbitsTwo);
 
 //        ASK ABOUT THIS ON MONDAY - You get duplicates in the join table if you add a film to the actor's list of films,
 //        and add the actor to the film's list of actors, and update. Is it okay to only add one to the other and
 //        update, even though that would mean differences between the information in the Java world, and the database?
 
+        List<Film> filmsProducedBStudio = DBStudio.getFilmsProducedByStudio(studio);
+
+        List<Director> directorsWorkingForStudio = DBStudio.getDirectorsWorkingForStudio(studio);
+
+        Film film = DBFilm.getFilmDirectedBy(directorNeil);
+
+        List<Actor> actorsInFilm = DBActor.getActorsInFilm(filmRabbits);
+
+        List<Film> filmsActorHasStarredIn = DBFilm.getFilmsStarredIn(comedyJane);
     }
 }
