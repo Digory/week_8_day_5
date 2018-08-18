@@ -1,10 +1,13 @@
 package models;
 
+import db.DBFilm;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import static models.FilmGenreType.COMEDY;
 
 @Entity
 @Table(name = "actors")
@@ -85,6 +88,33 @@ public abstract class Actor {
 
     public void addToFilmsStarredIn(Film film){
         filmsStarredIn.add(film);
+    }
+
+    public static String getAmountOfFilmsByGenre(Actor actor){
+        List<Film> filmsStarredIn = DBFilm.getFilmsStarredIn(actor);
+        int comedies = 0;
+        int dramas = 0;
+        int romances = 0;
+        int horrors = 0;
+        int justWeird = 0;
+        for (Film film : filmsStarredIn){
+            switch(film.getGenre()){
+                case COMEDY: comedies++;
+                break;
+                case DRAMA: dramas++;
+                break;
+                case ROMANCE: romances++;
+                break;
+                case HORROR: horrors++;
+                break;
+                case JUST_WEIRD: justWeird++;
+                break;
+        }}
+        return "Comedies: " + comedies + "\n" +
+                "Dramas: " + dramas + "\n" +
+                "Romances: " + romances + "\n" +
+                "Horrors: " + horrors + "\n" +
+                "Just weird: " + justWeird;
     }
 
     public abstract String audition();

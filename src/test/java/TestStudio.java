@@ -58,4 +58,10 @@ public class TestStudio {
         assertEquals(5000, actor.getWallet());
     }
 
+    @Test
+    public void doesNotPayActorIfBudgetTooSmall(){
+        studio.payActor(actor, 2000000);
+        assertEquals(0, actor.getWallet());
+    }
+
 }

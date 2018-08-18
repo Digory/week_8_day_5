@@ -78,7 +78,13 @@ public class Studio {
         films.add(film);
     }
 
-    public void payActor(Actor actor, int amount){
-        actor.addToWallet(amount);
+    public boolean payActor(Actor actor, int amount){
+        if (amount <= budget){
+            budget -= amount;
+            actor.addToWallet(amount);
+            return true;
+        }
+        return false;
+
     }
 }

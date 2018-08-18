@@ -44,5 +44,7 @@ public class Runner {
         List<Actor> actorsInFilm = DBActor.getActorsInFilm(filmRabbits);
 
         List<Film> filmsActorHasStarredIn = DBFilm.getFilmsStarredIn(comedyJane);
+
+        System.out.println(Actor.getAmountOfFilmsByGenre(comedyJane));
     }
 }
